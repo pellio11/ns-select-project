@@ -1,2 +1,2 @@
 # ns-select-project
-Select website
+Select website project
