@@ -1,0 +1,138 @@
+.brand{
+    width: 145px;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.brand img{
+    width: 145px;
+    display: block;
+}
+
+.banner{
+    height: 80px;
+    border-bottom: 1px solid $borders;
+    position: relative;
+}
+
+.banner .container{
+    height: 100%;
+}
+
+.nav_toggle{
+    background: none;
+    border: none;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    text-align: center;
+    border-left: 1px solid $borders;
+}
+
+.nav_login{
+    background: none;
+    border: none;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    right: 80px;
+    top: 0px;
+    text-align: center;
+    border-left: 1px solid $borders;
+}
+
+.nav_login span{
+    display: inline-block;
+    position: relative;
+    bottom: 3px;
+}
+
+.nav-icon {
+  margin: .2em 0 1em 0;
+  display: inline-block;
+  width: 40px;
+  margin-bottom: 0px;
+}
+
+.nav-icon:hover {
+  cursor: pointer;
+}
+
+.nav-icon:after, 
+.nav-icon:before, 
+.nav-icon div {
+  background-color: $brand-primary;
+  -o-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  content: '';
+  display: block;
+  height: 2px;
+  margin: 7px 0; 
+  @include transition(all .2s ease-in-out);
+}
+
+.cancel:after, 
+.cancel:before, 
+.cancel div {
+  @media (min-width: $screen-sm-min) {
+         background-color: $brand-primary;
+  }
+}
+
+.cancel:before {
+  transform: translateY(7px) rotate(135deg);
+  -moz-transform: translateY(7px) rotate(135deg);
+  -webkit-transform: translateY(7px) rotate(135deg);
+  height: 3px;
+}
+
+.cancel:after {
+  transform: translateY(-12px) rotate(-135deg);
+  -moz-transform: translateY(-12px) rotate(-135deg);
+  -webkit-transform: translateY(-12px) rotate(-135deg);
+  height: 3px;
+}
+
+.cancel div {
+  -moz-transform: scale(0);
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+/*Nav Menu*/
+.nav_menu{
+    background: $brand-primary;
+    position: absolute;
+    top: 79px;
+    left: 0px;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav_menu li{
+    border-bottom: 1px solid rgba(0,0,0,0.18);
+}
+
+.nav_menu li a{
+    color: #fff;
+}
+
+.nav_menu li a:hover{
+    background: $brand-primary-dark;
+}
+
+/*Login Panel*/
+.login_panel{
+    background: $brand-primary;
+    position: absolute;
+    top: 79px;
+    left: 0px;
+    width: 100%;
+    z-index: 1;
+    padding: 30px;
+}

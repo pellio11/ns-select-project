@@ -19,6 +19,49 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+        
+      //Hide full menu                      
+      $('.nav_menu').hide();
+      
+      //Menu click
+      $('.nav_toggle').click(function() {
+    
+        var clicks = $(this).data('clicks');
+        if (clicks) {
+          //2
+          $('.nav-icon').toggleClass('cancel');
+          $('.nav_menu').slideUp();
+        } else {
+          //1
+          $('.nav-icon').toggleClass('cancel');
+          $('.nav_menu').slideDown();
+        }
+        $(this).data("clicks", !clicks);
+      });
+      
+      
+      //Hide login                     
+      $('.login_panel').hide();
+      
+      //Login  click
+      $('.nav_login').click(function() {
+  
+        var clicks = $(this).data('clicks');
+        if (clicks) {
+          //2
+          $(this).toggleClass('login-active');
+          $('.login_panel').slideUp();
+        } else {
+          //1
+          $(this).toggleClass('login-active');
+          $('.login_panel').slideDown();
+        }
+        $(this).data("clicks", !clicks);
+      });
+      
+        
+        
+        
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

@@ -6,4 +6,16 @@ $main-sm-columns:       12;
 $sidebar-sm-columns:    4;
 
 // Colors
-$brand-primary:         #27ae60;
+$brand-primary:         #2c88b7;
+$brand-primary-dark:    darken( $brand-primary, 8% );
+$brand-primary-hover:   #333;
+$borders:               #d9d9d9;
+$greybg:                #e2e2e2;
+$primary-font:          "aktiv-grotesk-std",sans-serif;
+$secondary-font:        "runda",sans-serif;
+
+
+// Glyphicons path
+// -------------------------
+
+$icon-font-path:        "../vendor/bootstrap-sass-official/assets/fonts/";

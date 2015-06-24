@@ -1,1 +1,88 @@
+// Global Styles - Base and Typography
 
+#content{
+    overflow-x: hidden;
+}
+    
+body {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    text-rendering:optimizelegibility;     
+    font-family: $primary-font;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 28px;
+    color: #333;
+    overflow-x: hidden;
+    }
+    
+h1,h2,h3,h4,h5,h6{
+    font-family:inherit;
+    margin-top:0;
+    font-style: normal;
+    }
+    
+p{
+    margin:0 0 20px 0;
+    }
+
+  
+h1{  
+    font-family: $secondary-font;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 70px;
+    margin-bottom: 40px;
+    }
+    
+h1 a:hover {
+    text-decoration:none;
+}
+
+h2{
+    font-family: $secondary-font;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 36px;
+    margin-bottom: 40px;
+    }
+ 
+h3{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 20px;
+    }
+    
+h4{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: $brand-primary;
+    }
+    
+    
+a{
+    color: $brand-primary;
+    text-decoration: none;
+    @include transition(all .3s ease-in-out);
+    }
+
+a:hover{
+    color: $brand-primary-hover;
+    text-decoration: none;
+    }
+
+   
+blockquote{
+    background: $greybg;
+    padding: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border: 0px !important;
+}
+    

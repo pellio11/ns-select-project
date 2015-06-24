@@ -1,0 +1,33 @@
+// Mixins
+// -------------------------
+
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin box-sizing($boxsetting) {
+    -moz-box-sizing: $boxsetting;
+    -webkit-box-sizing: $boxsetting;
+    box-sizing: $boxsetting;
+}
+
+@mixin coverbg {
+    background-size:cover !important;
+    background-position:center center;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;  
+}
+
