@@ -1,0 +1,14 @@
+.cta{
+        background: $brand-primary;
+        @include border-radius(4px);
+        padding: 12px 20px;
+        color: #fff;
+        height: auto;
+        @include transition(all .2s ease-in-out);
+        display: inline-block;
+}
+
+.cta:hover{
+        background: $brand-primary-dark;
+        color: #fff;
+}

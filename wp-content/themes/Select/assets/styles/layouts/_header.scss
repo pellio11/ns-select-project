@@ -2,6 +2,9 @@
     width: 145px;
     margin-top: 15px;
     display: inline-block;
+    @media (min-width: $screen-md-min){
+        margin-top: 45px;
+    }
 }
 
 .brand img{
@@ -13,10 +16,17 @@
     height: 80px;
     border-bottom: 1px solid $borders;
     position: relative;
+    
+    @media (min-width: $screen-md-min){
+        height: 143px;
+    }
 }
 
 .banner .container{
     height: 100%;
+    @media (min-width: $screen-md-min){
+        position: relative;
+    } 
 }
 
 .nav_toggle{
@@ -29,6 +39,51 @@
     top: 0px;
     text-align: center;
     border-left: 1px solid $borders;
+    
+    @media (min-width: $screen-md-min){
+        display: none;
+    } 
+}
+
+
+.nav_search{
+    display: none;
+    
+    @media (min-width: $screen-xs-min){
+    display: inline-block;
+    background: none;
+    border: none;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    right: 160px;
+    top: 0px;
+    text-align: center;
+    border-left: 1px solid $borders;
+    @include transition(all .2s ease-in-out);
+    }
+    
+    @media (min-width: $screen-sm-min){
+        right: 215px;
+    }
+    
+    @media (min-width: $screen-md-min){
+        display: none;
+        margin-top: 30px;
+    }
+    
+    @media (min-width: $screen-lg-min){
+        display: inline-block;
+        border-left: none;
+        right: 140px;
+    }
+    
+}
+
+.nav_search i{
+    font-size: 24px;
+    color: $brand-primary;
+    color: $grey-dark;
 }
 
 .nav_login{
@@ -41,12 +96,47 @@
     top: 0px;
     text-align: center;
     border-left: 1px solid $borders;
+    @include transition(all .2s ease-in-out);
+    
+    @media (min-width: $screen-sm-min){
+        width: auto;
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+              
+    @media (min-width: $screen-md-min){
+        background: $brand-primary;
+        @include border-radius(4px);
+        padding: 12px 20px;
+        color: #fff;
+        height: auto;
+        margin-top: 45px;
+        right: 0px;
+    } 
 }
 
-.nav_login span{
+.nav_login:hover{
+    @media (min-width: $screen-md-min){
+        background: $brand-primary-dark;
+    }
+}
+
+.nav_login span.mob{
     display: inline-block;
     position: relative;
     bottom: 3px;
+    @media (min-width: $screen-sm-min){
+        display: none;
+    }
+}
+
+.nav_login span.full{
+    display: none;
+    @media (min-width: $screen-sm-min){
+        display: inline-block;
+        position: relative;
+        bottom: 3px;
+    }
 }
 
 .nav-icon {
@@ -112,6 +202,10 @@
     left: 0px;
     width: 100%;
     z-index: 1;
+    
+    @media (min-width: $screen-md-min){
+    visibility: hidden;
+    } 
 }
 
 .nav_menu li{
@@ -128,11 +222,88 @@
 
 /*Login Panel*/
 .login_panel{
-    background: $brand-primary;
+    background: $brand-primary url('../images/login-bg.jpg');;
+    @include coverbg;
     position: absolute;
     top: 79px;
     left: 0px;
     width: 100%;
     z-index: 1;
-    padding: 30px;
+    padding: 40px 30px;
+    
+    @media (min-width: $screen-md-min){
+         top: 142px;
+         width: 400px;
+         left: auto;
+         right: 0px;
+    }
+}
+
+/*Nav full*/
+.nav_full{
+    display: none;
+    @media (min-width: $screen-md-min){
+        display: block;
+        z-index: 1;
+        float: right;
+        width: auto;
+        height: 80px;
+        position: relative;
+        margin-top: 45px;
+        right: 155px;
+    }
+    @media (min-width: $screen-lg-min){
+        right: 220px;
+    }
+}
+
+.nav_full li{
+    @media (min-width: $screen-md-min){
+        display: inline-block;
+        position: relative;
+    } 
+}
+
+.nav_full li a{
+    @media (min-width: $screen-md-min){
+      padding: 10px;
+      color: #333;
+    }
+    
+    @media (min-width: $screen-lg-min){
+      padding: 10px 15px;
+    }   
+}
+
+.nav_full li a:hover{
+    @media (min-width: $screen-md-min){
+      color: $brand-primary;
+      background: none;
+    }  
+}
+
+.nav_full li:hover{
+    @media (min-width: $screen-md-min){
+      background: none;
+    }  
+}
+
+
+/*Search Panel*/
+.search_panel{
+    background: $brand-primary url('../images/login-bg.jpg');
+    @include coverbg;
+    position: absolute;
+    top: 79px;
+    left: 0px;
+    width: 100%;
+    z-index: 1;
+    padding: 40px 30px;
+    
+    @media (min-width: $screen-md-min){
+         top: 142px;
+         width: 400px;
+         left: auto;
+         right: 0px;
+    }
 }

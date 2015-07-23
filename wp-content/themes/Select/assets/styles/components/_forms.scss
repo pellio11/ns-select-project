@@ -1,0 +1,297 @@
+.form_hidden{
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px)
+}
+
+/*Login form*/
+.login_panel h3{
+    color: #fff;
+}
+
+.login_panel input[type='text'],
+.login_panel input[type='password']
+{
+    width: 100%;
+    border: 0px;
+    padding: 12px;
+    margin-bottom: 10px;
+    @include border-radius(2px);
+}
+
+.login_panel input[type='submit']
+{
+    width: 100%;
+    border: 0px;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: rgba(3,3,3,0.6);
+    color: #fff;
+    @include border-radius(2px);
+}
+
+.login_panel ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.login_panel ul li{
+    margin: 0px;
+    padding: 0px;
+}
+
+.login_panel ul li a{
+    color: #fff;
+}
+
+.login_panel p.submit{
+    margin-bottom: 0px;
+}
+
+/*Search panel form*/
+.search_panel h3{
+    color: #fff;
+}
+
+.search_panel .search-field{
+    border: 0px;
+    padding: 12px;
+    margin-bottom: 10px;
+    height: 50px;
+    @include border-radius(2px);
+}
+
+.search_panel .search-field:focus,
+.search_panel .search-field:active,
+{
+    border: none;
+    box-shadow: none;
+}
+
+.search_panel .input-group{
+    width: 100%;
+}
+
+.search_panel .input-group-btn{
+     width: 80px !important;
+}
+
+.search_panel .search-submit{
+    width: 100%;
+    border: 0px;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: rgba(3,3,3,0.6);
+    color: #fff;
+    @include border-radius(2px);
+    height: 50px;
+}
+
+/*Contractor search home*/
+#contract_search select{
+    width: 250px;
+    border: 0px;
+    padding: 18px 18px 18px 42px;
+    margin-bottom: 10px;
+    @include border-radius(2px);
+    margin-right: 10px;
+    background: transparent;
+    
+    @media (min-width: $screen-xs-min){
+        width: 360px;
+    }
+    
+    @media (min-width: 600px){
+        width: 460px;
+    }
+    
+    @media (min-width: $screen-sm-min){
+        width: 170px;
+    }
+    
+    @media (min-width: $screen-md-min){
+        width: 250px
+    } 
+}
+
+#contract_search select#distance{
+    background: transparent url('../images/i-distance.gif') 10px no-repeat;
+}
+
+#contract_search select#groupby{
+    background: transparent url('../images/i-grouping.gif') 10px no-repeat;
+}
+
+#contract_search input[type='text']{
+    width: 230px;
+    border: 0px;
+    padding: 14px 18px 18px 42px;
+    margin-bottom: 10px;
+    @include border-radius(2px);
+    margin-right: 10px;
+    background: #fff url('../images/i-location.gif') 10px no-repeat;
+    color: #333;
+    
+    @media (min-width: $screen-xs-min){
+        width: 340px;
+    }
+    
+    @media (min-width: 600px){
+        width: 440px;
+    }
+    
+    @media (min-width: $screen-sm-min){
+        width: 150px;
+    }
+    
+    @media (min-width: $screen-md-min){
+        width: 230px;
+    } 
+}
+
+.select_wrap{
+    width: 230px;
+    height: 59px;
+    overflow: hidden;
+    background: #fff url('../images/arrow.gif') 200px no-repeat;
+    @include border-radius(2px);
+    display: inline-block;
+    margin-right: 10px;
+    
+    @media (min-width: $screen-xs-min){
+        display: block;
+        width: 340px;
+        margin: 0 auto 10px auto;
+        background: #fff url('../images/arrow.gif') 310px no-repeat;
+    }
+    
+    @media (min-width: 600px){
+        width: 440px;
+        background: #fff url('../images/arrow.gif') 410px no-repeat;
+    }
+    
+    @media (min-width: $screen-sm-min){
+        display: inline-block;
+        margin: 0 10px 0 0;
+        width: 150px;
+        background: #fff url('../images/arrow.gif') 120px no-repeat;
+    }
+    
+    @media (min-width: $screen-md-min){
+        width: 230px;
+        background: #fff url('../images/arrow.gif') 200px no-repeat;
+    }
+
+}
+
+.select_submit{
+    height: 59px;
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 10px;
+    
+    @media (min-width: $screen-xs-min){
+            margin-right: 0px;
+    }
+}
+
+
+#contract_search input[type='submit']{
+        background: $brand-primary;
+        @include border-radius(4px);
+        padding: 12px 20px;
+        color: #fff;
+        height: auto;
+        @include transition(all .2s ease-in-out);
+        border: none;
+        height: 60px;
+        width: 230px;
+        
+        @media (min-width: $screen-xs-min){
+            width: 340px;
+        }
+        
+        @media (min-width: 600px){
+            width: 440px;
+        }
+        
+        @media (min-width: $screen-sm-min){
+            width: auto;
+        }
+        
+        @media (min-width: $screen-lg-min){
+            width: 112px;
+        }
+     
+}
+
+#contract_search input[type='submit']:hover{
+        background: $brand-primary-dark;
+}
+
+//Content forms
+.content_inner input[type='text'],
+.content_inner select,
+.content_inner input[type='date']
+{
+    border: 1px solid $borders;
+    @include border-radius(2px);
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.content_inner input[type='text']{
+    width: 100%;
+}
+
+.content_inner select{
+    width: auto;
+}
+
+.content_inner .med_select select{
+    width: 150px;
+}
+
+.content_inner .right_select ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.content_inner .right_select span{
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 6px;
+}
+
+.content_inner .right_select li{
+    display: block;
+    height: auto;
+    clear: both;
+    border-bottom: 1px solid $borders;
+    position: relative;
+    padding: 20px 70px 20px 0;
+}
+
+.content_inner .right_select li:last-child{
+    border-bottom: none;
+}
+
+.trading{
+    font-size: 14px;
+        @media (min-width: $screen-sm-min){
+            font-size: 16px;
+        }
+}
+
+.member_submit{
+    @extend .cta;
+    border: none;
+    padding-left: 60px;
+    padding-right: 60px;
+    display: inline-block;
+}

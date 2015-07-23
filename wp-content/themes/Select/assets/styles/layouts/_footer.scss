@@ -1,0 +1,158 @@
+.footer-widget{
+    @extend .col-sm-6, .col-md-4;
+    margin-bottom: 30px;
+    
+    @media (min-width: $screen-lg-min){
+    width: auto;
+    }
+}
+
+#text-2{
+    @media (min-width: $screen-lg-min){
+    width: 230px;
+    }
+}
+
+
+#nav_menu-4{
+    @media (min-width: $screen-lg-min){
+    width: 125px;
+    }
+}
+
+#nav_menu-5{
+    @media (min-width: $screen-lg-min){
+    width: 135px;
+    }
+}
+
+#nav_menu-6{
+    @media (min-width: $screen-lg-min){
+    width: 165px;
+    }
+}
+
+#text-3{
+    @media (min-width: $screen-lg-min){
+    width: 215px;
+    }
+}
+
+#text-2,
+#nav_menu-4,
+#nav_menu-5,
+#nav_menu-6
+{
+    @media (min-width: $screen-lg-min){
+    margin-right: 35px;
+    }
+    
+    @media (min-width: $screen-xl-min){
+    margin-right: 100px;
+    }
+    
+}
+
+.footer-widget:nth-child(2n + 1){  
+    @media (min-width: $screen-sm-min){
+    clear: left;
+    }
+    @media (min-width: $screen-md-min){
+    clear: none;
+    }
+}
+
+.footer-widget:nth-child(4n + 4){  
+    @media (min-width: $screen-md-min){
+    clear: left;
+    }
+    @media (min-width: $screen-lg-min){
+    clear: none;
+    }
+}
+    
+.content-info h2.widgettitle{
+    font-family: $primary-font;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid $darkborders;
+    
+    @media (min-width: $screen-lg-min){
+        border-bottom: 0px;
+    }   
+}
+
+.footer-widget ul{
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.footer-widget ul li{
+    display: inline-block;
+    width: 100%;
+}
+
+.footer-widget ul li a{
+    color: #333;
+    display: inline-block;
+    width: auto;
+}
+
+.footer-social{
+    display: inline-block;
+    width: 100%;
+    color: #333;
+}
+
+.footer-social span{
+    display: inline-block;
+    @include transition(all .2s ease-in-out);
+    @include border-radius(4px);
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 24px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.footer-twitter span{
+    background: #31a0b1;
+}
+
+.footer-youtube span{
+    background: #cd181f;
+}
+
+.footer-social i{
+    color: #fff;
+}
+
+.footer-base{
+    @extend .col-md-12;
+    display: block;
+    clear: both;margin-top: 50px;
+}
+
+.footer-base .inner{
+    border-top: 1px solid $darkborders;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+.brandfoot{
+    display: none;
+    @media (min-width: $screen-xl-min){
+    float: right;
+    width: 150px;
+    display: inline-block;
+    }
+}
+
+.brandfoot img{
+    width: 150px;
+}
