@@ -12,3 +12,17 @@
         background: $brand-primary-dark;
         color: #fff;
 }
+
+
+.btn_line{
+     @extend .cta;
+     background: none;
+     border: 2px solid $brand-primary;
+     color: $brand-primary;
+}
+
+.btn_line:hover{
+     background: none;
+     border: 2px solid $brand-primary;
+     color: $brand-primary;
+}

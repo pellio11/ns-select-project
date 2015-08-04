@@ -2,7 +2,9 @@
   <div class="container">  
       <a class="brand" href="<?= esc_url(home_url('/')); ?>"><img alt="<?php bloginfo('name'); ?>" src="<?php echo get_template_directory_uri(); ?>/assets/images/select-logo.gif" /></a>
       <button class="nav_search"><i class="fa fa-search"></i></button>
-      <button class="nav_login"><span class="mob">Login</span><span class="full">Member Login</span></button>
+      <?php if (!is_user_logged_in()) { ?> <button class="nav_login"><span class="mob">Login</span><span class="full">Member Login</span></button><?php } ?>
+      <?php if (is_user_logged_in()) { ?> <a href="<?php echo wp_logout_url( home_url() ); ?>" class="nav_logged_in"><span class="mob">Logout</span><span class="full">Logout</span></a><?php } ?>
+      <?php if (is_user_logged_in()) { ?> <a href="<?= esc_url(home_url('/')); ?>my-select" class="my_select"><span>My Select</span></a><?php } ?>
       <button class="nav_toggle">
         <div class="nav-icon">
          <div></div>

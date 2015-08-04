@@ -139,6 +139,49 @@
     }
 }
 
+
+.nav_logged_in{
+    @extend .nav_login;
+    @media (min-width: $screen-md-min){
+        background: none;
+        @include border-radius(0px);
+        font-size: 13px !important;
+        color: $brand-primary;
+        border-left: none;
+        padding-left: 0px;
+        padding-right: 0px;
+        top: 2px;
+    } 
+}
+
+.nav_logged_in:hover{
+    @media (min-width: $screen-md-min){
+        background: none;
+    } 
+}
+
+.my_select{
+    
+    display: none;
+    
+    @media (min-width: $screen-md-min){
+    display: inline-block;
+    @extend .btn_line;
+    position: absolute;
+    margin-top: 45px;
+    right: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding: 10px;
+    top: 0px;
+    }
+}
+
+.my_select span{
+    position: relative;
+    top: -2px;
+}
+
 .nav-icon {
   margin: .2em 0 1em 0;
   display: inline-block;

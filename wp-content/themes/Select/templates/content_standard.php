@@ -1,6 +1,5 @@
 <div class="content_inner">
 
-
     <!--<h2><?php the_title(); ?></h2>-->
     
     <?php if(get_field('content_intro')) { ?>

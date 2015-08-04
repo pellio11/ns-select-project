@@ -13,6 +13,12 @@ $greatgrandparent_title = get_the_title($greatgrandparent); ?>
 
 <div class="side_nav_wrap">
 	
+
+<!---Training Pages and Courses--->
+<?php if (is_page( 16 ) || $post->post_parent == '16' || tribe_is_event() || tribe_is_event_category() || tribe_is_in_main_loop() || tribe_is_view() || 'tribe_events' == get_post_type() || is_singular( 'tribe_events' )) { ?>
+<?php echo do_shortcode( '[widget id="nav_menu-7"]' ); ?>
+<?php } ?>
+
 	
 <!---Shop--->
 <?php if( get_post_type() == 'product' ) { ?>

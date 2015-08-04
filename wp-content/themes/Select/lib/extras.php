@@ -36,3 +36,12 @@ add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 
 //Custom image size - Recipes
 add_image_size( 'covers_img', 450, 300, true );
+
+
+
+
+
+
+
+
+

@@ -146,10 +146,88 @@ function login_header( $title = 'Log In', $message = '', $wp_error = '' ) {
 	$classes = apply_filters( 'login_body_class', $classes, $action );
 
 	?>
+	<script src="//use.typekit.net/rvc5qhx.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+	<style>
+	.login_custom_logo,
+	.login_custom_logo img{
+		width: 200px !important;
+		}
+	.login_custom_logo{
+		margin: 0 auto 5px auto;
+		}
+		
+	#login{
+		width: 380px;
+		padding-top: 180px;
+		}	
+		
+	#loginform{
+		border: 1px solid #d9d9d9; !important;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		-ms-border-radius: 4px;
+		border-radius: 4px;
+		padding: 40px;
+		box-shadow: none;
+	}
+	
+	body{
+		background: #fff;
+		text-rendering:optimizelegibility;
+		font-family: "aktiv-grotesk-std",sans-serif;
+		font-weight: 300 !important;
+		color: #333 !important;
+	}
+	label{
+		font-weight: 300 !important;
+		font-size: 16px !important;
+		color: #333 !important;
+		}
+	h2{
+		font-family: "runda",sans-serif;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 36px;
+		line-height: 46px;
+		margin-bottom: 20px;
+		text-align: center;
+		}
+	
+	.input{
+		border: 1px solid #d9d9d9; !important;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		-ms-border-radius: 2px;
+		border-radius: 2px;
+		padding: 10px !important;
+		box-shadow: none!important;
+	}
+	
+	.input:focus, .input:active{
+		box-shadow: none!important;
+	}
+	
+	#wp-submit{
+		background: #2c88b7;
+        @include border-radius(4px);
+        color: #fff;
+        height: auto;
+        @include transition(all .2s ease-in-out);
+        display: inline-block;
+		box-shadow: none;
+		border: 0px;
+		padding: 3px 15px;
+	}
+	
+	</style>
 	</head>
-	<body class="login <?php echo esc_attr( implode( ' ', $classes ) ); ?>">
+	
+
+	<body class="login_custom_bg login <?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 	<div id="login">
-		<h1><a href="<?php echo esc_url( $login_header_url ); ?>" title="<?php echo esc_attr( $login_header_title ); ?>" tabindex="-1"><?php bloginfo( 'name' ); ?></a></h1>
+		<div class="login_custom_logo"><a class="brand" href="<?= esc_url(home_url('/')); ?>"><img alt="<?php bloginfo('name'); ?>" src="<?php echo get_template_directory_uri(); ?>/assets/images/select-logo.gif" /></a></div>
+	    <!--<h2>Members Login</h2>-->
 	<?php
 
 	unset( $login_header_url, $login_header_title );
@@ -898,6 +976,8 @@ default:
 ?>
 
 <form name="loginform" id="loginform" action="<?php echo esc_url( site_url( 'wp-login.php', 'login_post' ) ); ?>" method="post">
+		<!--	<div class="login_custom_logo"><a class="brand" href="<?= esc_url(home_url('/')); ?>"><img alt="<?php bloginfo('name'); ?>" src="<?php echo get_template_directory_uri(); ?>/assets/images/select-logo.gif" /></a></div>
+	    <h2>Members Login</h2>-->
 	<p>
 		<label for="user_login"><?php _e('Username') ?><br />
 		<input type="text" name="log" id="user_login"<?php echo $aria_describedby_error; ?> class="input" value="<?php echo esc_attr( $user_login ); ?>" size="20" /></label>
