@@ -17,7 +17,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php do_action( 'woocommerce_before_cart_totals' ); ?>
 
 	<h2><?php _e( 'Cart Totals', 'woocommerce' ); ?></h2>
-
+	
+	<?php // if (!is_user_logged_in()) { ?>
+		<!--<a class="member_discount nav_login">Login for member discount</a>-->
+	<?php // } ?>
+	
 	<table cellspacing="0">
 
 		<tr class="cart-subtotal">

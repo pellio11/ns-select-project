@@ -1,5 +1,4 @@
 <div class="content_inner">
-
     <!--<h2><?php the_title(); ?></h2>-->
     
     <?php if(get_field('content_intro')) { ?>
@@ -11,4 +10,9 @@
     <?php } ?>
     
     <?php get_template_part('templates/content', 'page'); ?>
+    
+    <!--Training Content-->
+    <?php if (tribe_is_event_category()) { ?>
+     <?php get_template_part('templates/training_extra_courses'); ?>
+    <?php } ?>
 </div>

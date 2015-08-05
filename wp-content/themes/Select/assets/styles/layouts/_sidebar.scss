@@ -116,6 +116,72 @@
     color: #333;
 }
 
+
+
+
+
+//Custom side menus - taking same styling as normal side menu
+.widget_nav_menu .menu{
+    @extend .primary_list;
+}
+
+.widget_nav_menu .menu li{
+    position: relative;
+}
+
+.widget_nav_menu .menu li.parent_link i{
+    position: absolute;
+    display: block;
+    right: 0px;
+    top: 0px;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    border-left: 1px solid $borders;
+}
+
+.widget_nav_menu .menu li.parent_link i:hover{
+    cursor: pointer;
+}
+
+.widget_nav_menu .menu ul.sub-menu{
+    padding: 0px;
+    list-style-type: none;
+}
+
+.widget_nav_menu .menu ul.sub-menu li{
+    border-bottom: 1px solid $darkborders;
+}
+
+.widget_nav_menu .menu ul.sub-menu li:last-child{
+    border-bottom: none;
+}
+
+.widget_nav_menu .menu ul.sub-menu li a{
+    background: $greybg;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 13px;
+    letter-spacing: .4px;
+}
+
+
+.widget_nav_menu .widgettitle{
+    @extend .ancestor_title;
+    font-family: $primary-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    margin-bottom: 20px;
+}
+
+.widget_nav_menu{
+    margin-bottom: 30px;
+}
+
+
 //3 level fixes
 .sidebar li a.master_page{
     display: block;

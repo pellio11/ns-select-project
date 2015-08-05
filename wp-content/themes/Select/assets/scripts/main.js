@@ -150,6 +150,8 @@
       });
       
       
+      
+      
 
       //Sidebar Primary
       $( ".primary_list li.page_item_has_children" ).prepend( "<i class='fa fa-chevron-down'></i>" );
@@ -174,6 +176,9 @@
       $( ".primary_list li.current_page_item" ).parent('ul').parent('li').children('i').addClass('fa-times');
       $( ".primary_list li.current_page_item" ).parent('ul').parent('li').children('i').addClass('sub_active');
       $( ".primary_list li.current_page_item" ).parent('ul').parent('li').children('i').removeClass('fa-chevron-down');
+      
+      
+    
       
       
       
@@ -217,9 +222,52 @@
         $( ".side_nav_wrap" ).toggleClass('nav_show_hide');
       });
       
+      
+      
+      //Sidebar Custom Menus
+      $( ".widget_nav_menu .menu li ul.sub-menu" ).parent('li').prepend( "<i class='fa fa-chevron-down'></i>" );
+      $( ".widget_nav_menu .menu li ul.sub-menu" ).parent('li').addClass('parent_link');
+      $( ".widget_nav_menu .menu ul.sub-menu" ).hide();
+      $( ".widget_nav_menu .menu" ).prev('a').hide();
+     
+      $('.widget_nav_menu .menu li.parent_link i').each(function() {
+        $(this).click(function(){
+        $(this).parent('li').children('ul').fadeToggle();
+        $(this).toggleClass('fa-times');
+        $(this).toggleClass('fa-chevron-down');
+        $(this).toggleClass('sub_active');
+        });
+      });
+      
+      //Open dropdown on active page
+      $( ".widget_nav_menu .menu li.active" ).children('ul').show();
+      $( ".widget_nav_menu .menu li.active i" ).addClass('fa-times');
+      $( ".widget_nav_menu .menu li.active i" ).addClass('sub_active');
+      $( ".widget_nav_menu .menu li.active i" ).removeClass('fa-chevron-down');    
+      
 
       
+
       
+      //Training T and C
+      $('.add_tandc').attr('disabled','disabled');
+
+      $('.tandc_checkbox').click(function() {       
+        var tcclicks = $(this).data('tcclicks');
+        if (tcclicks) {
+          //2
+           $('.tandc_checkbox i').hide();
+           $('.add_tandc').attr('disabled','disabled');
+        } else {
+          //1
+          $('.tandc_checkbox i').show();
+          $('.add_tandc').removeAttr('disabled');
+        }
+        $(this).data("tcclicks", !tcclicks);
+
+        // $('.tandc_checkbox i').show();
+      });
+  
    
       },
       finalize: function() {

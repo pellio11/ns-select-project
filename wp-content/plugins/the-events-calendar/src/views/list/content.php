@@ -51,11 +51,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<!-- Footer Navigation -->
 		<?php do_action( 'tribe_events_before_footer_nav' ); ?>
-		<?php tribe_get_template_part( 'list/nav', 'footer' ); ?>
+		<?php  tribe_get_template_part( 'list/nav', 'footer' ); ?>
 		<?php do_action( 'tribe_events_after_footer_nav' ); ?>
 
 	</div>
 	<!-- #tribe-events-footer -->
-	<?php do_action( 'tribe_events_after_footer' ) ?>
+	<?php  do_action( 'tribe_events_after_footer' ) ?>
 
 </div><!-- #tribe-events-content -->

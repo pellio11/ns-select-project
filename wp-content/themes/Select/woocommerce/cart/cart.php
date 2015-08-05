@@ -89,6 +89,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 						<?php
 							echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
 						?>
+						<?php if (!is_user_logged_in()) { ?>
+							<a class="member_discount nav_login">Login for member discount</a>
+						<?php } ?>
 					</td>
 
 					<td class="product-quantity">
@@ -153,5 +156,4 @@ do_action( 'woocommerce_before_cart' ); ?>
 	<?php do_action( 'woocommerce_cart_collaterals' ); ?>
 
 </div>
-
 <?php do_action( 'woocommerce_after_cart' ); ?>
