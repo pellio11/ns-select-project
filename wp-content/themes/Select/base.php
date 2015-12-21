@@ -19,13 +19,14 @@ use Roots\Sage\Wrapper;
       get_template_part('templates/header');
     ?>
        
-        <?php include Wrapper\template_path(); ?>
+    <?php include Wrapper\template_path(); ?>
         
     <?php
       do_action('get_footer');
       get_template_part('templates/footer');
       wp_footer();
     ?>
+  
     
     <?php //get_template_part('templates/onpage_login'); ?>
   </body>

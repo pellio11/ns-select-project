@@ -17,7 +17,7 @@
                   <div class="promo_btm">
                     <h3><?php the_sub_field('promo_title'); ?></h3>
                     <p><?php the_sub_field('promo_desc'); ?></p>
-                    <a href="<?php the_sub_field('promo_link'); ?>">Read More</a>
+                    <a href="<?php if(get_sub_field('promo_link_url')) { ?><?php the_sub_field('promo_link_url'); ?><?php } else { ?> <?php the_sub_field('promo_link'); ?><?php } ?>">Read More</a>
                   </div>        
                 </div>             
             <?php endwhile; ?>

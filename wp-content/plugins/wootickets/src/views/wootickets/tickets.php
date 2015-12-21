@@ -7,7 +7,7 @@ $is_there_any_product_to_sell = false;
 ob_start();
 ?>
 <form action="<?php echo esc_url( $woocommerce->cart->get_cart_url() ) ?>" class="cart" method="post" enctype='multipart/form-data'>
-	<h2 class="tribe-events-tickets-title"><?php esc_html_e( 'Tickets', 'tribe-wootickets' ) ?></h2>
+	<h2 class="tribe-events-tickets-title"><?php esc_html_e( 'Participants', 'tribe-wootickets' ) ?></h2>
 
 	<table width="100%" class="tribe-events-tickets">
 		<?php

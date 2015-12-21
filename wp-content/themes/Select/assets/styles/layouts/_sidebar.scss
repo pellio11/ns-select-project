@@ -13,6 +13,13 @@
     }
 }
 
+
+.sidebar ul li a{
+    font-size: 13px;
+}
+
+
+
 .side_list{
     margin-bottom: 30px;
 }
@@ -23,7 +30,7 @@
     //border-top: 1px solid $borders; //add if no h3s
 }
 
-.primary_list li
+.primary_list li  
 {
     border-bottom: 1px solid $borders;
     border-left: 1px solid $borders;
@@ -121,15 +128,15 @@
 
 
 //Custom side menus - taking same styling as normal side menu
-.widget_nav_menu .menu{
+.sidebar .widget_nav_menu .menu{
     @extend .primary_list;
 }
 
-.widget_nav_menu .menu li{
+.sidebar .widget_nav_menu .menu li{
     position: relative;
 }
 
-.widget_nav_menu .menu li.parent_link i{
+.sidebar .widget_nav_menu .menu li.parent_link i{
     position: absolute;
     display: block;
     right: 0px;
@@ -141,24 +148,24 @@
     border-left: 1px solid $borders;
 }
 
-.widget_nav_menu .menu li.parent_link i:hover{
+.sidebar .widget_nav_menu .menu li.parent_link i:hover{
     cursor: pointer;
 }
 
-.widget_nav_menu .menu ul.sub-menu{
+.sidebar .widget_nav_menu .menu ul.sub-menu{
     padding: 0px;
     list-style-type: none;
 }
 
-.widget_nav_menu .menu ul.sub-menu li{
+.sidebar .widget_nav_menu .menu ul.sub-menu li{
     border-bottom: 1px solid $darkborders;
 }
 
-.widget_nav_menu .menu ul.sub-menu li:last-child{
+.sidebar .widget_nav_menu .menu ul.sub-menu li:last-child{
     border-bottom: none;
 }
 
-.widget_nav_menu .menu ul.sub-menu li a{
+.sidebar .widget_nav_menu .menu ul.sub-menu li a{
     background: $greybg;
     padding-left: 10px;
     padding-right: 10px;
@@ -167,7 +174,26 @@
 }
 
 
-.widget_nav_menu .widgettitle{
+.sidebar .widget_nav_menu .widgettitle{
+    @extend .ancestor_title;
+    font-family: $primary-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    margin-bottom: 20px;
+    display: none !important;
+}
+
+.sidebar .widget_nav_menu{  
+    margin-bottom: 30px;  
+}
+
+
+
+/*News sidebar*/
+
+.sidebar .widget .widgettitle{
     @extend .ancestor_title;
     font-family: $primary-font;
     font-style: normal;
@@ -177,9 +203,13 @@
     margin-bottom: 20px;
 }
 
-.widget_nav_menu{
+.sidebar .widget_recent_entries ul,
+.sidebar .widget_archive ul
+{
+    @extend .primary_list;
     margin-bottom: 30px;
 }
+
 
 
 //3 level fixes
@@ -329,6 +359,61 @@
     display: block;
 }
 
+
+
+//Shop Sidebar Widget
+.sidebar .widget_product_categories .product-categories{
+    @extend .primary_list;
+}
+
+.sidebar .widget_product_categories .product-categories li.cat-parent{
+    position: relative;
+}
+
+.sidebar .widget_product_categories .product-categories li.cat-parent i{
+    position: absolute;
+    display: block;
+    right: 0px;
+    top: 0px;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    border-left: 1px solid $borders;
+}
+
+.sidebar .widget_product_categories .product-categories li.cat-parent i:hover{
+    cursor: pointer;
+}
+
+.sidebar .widget_product_categories .product-categories li.cat-parent ul.children
+{
+    display: none;
+}
+
+.sidebar .widget_product_categories .product-categories li.cat-parent a{
+    color: $brand-primary;
+}
+
+.sidebar .widget_product_categories .product-categories li.cat-parent li a{
+    font-weight: 300;
+    color: #333;
+}
+
+//Widgets are hidden on mobile but these custom menus use widgets so display these
+#woocommerce_product_categories-2,
+#nav_menu-7
+{
+    display: block !important;
+}
+
+//Hide 'company view' link in sidebar
+.page-item-802{
+   display: none; 
+}
+
+
+
 //Bread
 .bread{
     @extend .col-md-12;
@@ -382,6 +467,7 @@
     display: none;
     @media (min-width: $screen-md-min){
     position: absolute;
+    position: fixed;
     bottom: -2000px;
     right: -1px;
     border-right: 1px solid #e2e2e2;
@@ -389,4 +475,66 @@
     width: 1px;
     display: inline-block;
     }
+}
+
+.foot_line_wrap{
+    position: relative;
+}
+
+.foot_line{
+    display: none;
+    @media (min-width: $screen-md-min){
+    position: absolute;
+    bottom: -300px;
+    left: 322px;
+    border-right: 1px solid #e2e2e2;
+    height: 2200px;
+    width: 1px;
+    z-index: -1000 !important;
+    display: inline-block;}
+    @media (min-width: $screen-lg-min){
+        left: 292px;
+    }
+    
+    @media (min-width: $screen-xl-min){
+        left: 356px;
+    }
+}
+
+.pagehead-default{
+    z-index: 5 !important;
+}
+
+
+.sidebar .widget{
+    display: none;
+    @media (min-width: $screen-md-min){
+        display: block; 
+    }
+}
+
+
+//Sidebar Duplicate Fixes-set all done in sidebar.php but some still showing.
+.page-id-1838 .side_list,
+.page-id-1838 .ancestor_main,
+.page-id-1512 .side_list,
+.page-id-1512 .ancestor_main
+{
+    display: none !important;
+}
+
+
+//Contractor search hide subs
+.find-a-contractor .side_list li:first-child ul.children,
+.find-a-contractor .side_list li:first-child i.fa-times,
+.searchadvanced .side_list li:first-child ul.children,
+.searchadvanced .side_list li:first-child i.fa-times,
+.searchcompanyname .side_list li:first-child ul.children,
+.searchcompanyname .side_list li:first-child i.fa-times,
+.searchpostcode .side_list li:first-child ul.children,
+.searchpostcode .side_list li:first-child i.fa-times,
+.viewcompany .side_list li:first-child ul.children,
+.viewcompany .side_list li:first-child i.fa-times
+{
+    display: none !important;
 }

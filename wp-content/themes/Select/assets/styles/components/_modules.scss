@@ -31,7 +31,8 @@
 .banner_dark{
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.6);
+    //background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.4);
     padding: 60px 30px;
     
     @media (min-width: $screen-xs-min){
@@ -147,6 +148,10 @@
 
 .center-title h1{
     margin-bottom: 10px;
+    font-size: 36px;
+    @media (min-width: $screen-sm-min){
+            font-size: 56px;
+    }  
 }
 
 .center-title p{
@@ -163,6 +168,13 @@
 
 .center-title .cta{
     margin-top: 10px;
+}
+
+.left-title{
+    @extend .center-title;
+    @media (min-width: $screen-sm-min){
+            text-align: left;
+    }   
 }
 
 
@@ -413,11 +425,24 @@
 //Cover Panels Content
 .cover_panel_content{
     @extend .cover_panel;
-    @extend .col-md-6, .col-sm-6;
+    @extend .col-md-6, .col-sm-6; 
 }
 
 .cover_panel_content img{
     width: 100% !important;
+    @media (min-width: $screen-sm-min){
+        height: 220px; 
+    }
+    @media (min-width: $screen-md-min){
+        height: 176px; 
+    }
+    @media (min-width: $screen-lg-min){
+        height: 246px; 
+    }
+    @media (min-width: $screen-xl-min){
+        height: 311px; 
+    }
+    
 }
 
 
@@ -452,6 +477,11 @@
     position: relative;
     margin-bottom: 30px;
     left: 1px;
+    
+        @media (min-width: $screen-md-min){
+            margin-right: 15px;
+        }
+    
 }
 
 .widget_select h3,
@@ -485,6 +515,9 @@
 .widget_select_alt{
     display: block;
     position: relative;
+        @media (min-width: $screen-md-min){
+            margin-right: 15px;
+        }
 }
 
 .widget_select_alt img{
@@ -506,6 +539,17 @@
     letter-spacing: .3px;  
 }
 
+.widget_textbox{
+    border: 1px solid $borders;
+    border-top: 0px;
+    padding: 30px;
+    display: inline-block;
+        @media (min-width: $screen-md-min){
+            margin-right: 15px;
+        }
+}
+
+
 /*Woo Commerce*/
 
 .woocommerce .products .product-category{
@@ -525,7 +569,9 @@
 
 .products .product h3{
     padding: 0px !important;
-    height: 26px !important;
+    /*height: 26px !important;*/
+    line-height: 24px;
+    margin-bottom: 15px !important;
 }
 
 .products .product .amount{
@@ -607,6 +653,9 @@ input#place_order{
 
 .product_single_wrap .product_title{
     margin-bottom: 0px;
+    font-size: 36px;
+    line-height: 46px;
+    margin-bottom: 20px;
 }
 
 .single_related .woocommerce-tabs{
@@ -681,6 +730,10 @@ input#place_order{
 .ssba{
     width: auto;
     display: inline-block;
+    font-family: $primary-font !important;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px !important;  
 }
 
 .desc_mob{
@@ -768,6 +821,79 @@ ul.payment_methods li.payment_method_cheque{
     }
 
 
+
+.downloads{
+    @extend .btn;
+    background:  $brand-primary !important;
+    color: #fff !important;
+    margin-bottom: 20px;
+}
+
+.downloads a{
+    background:  $brand-primary !important;
+    color: #fff !important;
+}
+
+
+.single-tribe_events #tribe-events-header{
+    display: block;
+    }	
+
+
+
+
+#tribe-bar-form input[type="text"]{
+    background: #fff;
+    border-bottom: 0px;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+
+.tribe-events-schedule span.dtend{
+    font-size: 13px;
+    font-weight: 300;
+}
+
+
+.coupon{
+    display: none !important;
+}
+
+
+
+.shop_links a{
+    display: block;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    @extend .cta;
+    padding: 6px 10px !important;
+    background: #9e9e9e;
+    @media (min-width: $screen-sm-min) {
+        display: inline-block;
+        margin-bottom: 0px;
+    }
+}
+
+.info_dialogue{
+    background: #e2e2e2;
+    padding: 10px;
+    @include border-radius(4px);
+}
+
+.info_dialogue i{
+    color: $brand-primary;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.info_dialogue a{
+    cursor: pointer;
+}
+
+
+
+
 /*Contact*/
 .contact_panel{
     @extend .col-md-6;
@@ -778,14 +904,14 @@ ul.payment_methods li.payment_method_cheque{
     width: 100% !important;
 }
 
-.contact_panel .widget h2{
+.contact_panel .widget h2{ 
     display: none;
 }
 
 
 //Responsive Video 
 .video-container{
-  position: relative;
+  position: relative; 
   padding-bottom: 30.25%;
   padding-top: 10px;
   height: 0;
@@ -803,8 +929,6 @@ ul.payment_methods li.payment_method_cheque{
    @media (min-width: $screen-lg-min) {
       height: 560px;
   }
-    
-
 }
 
 .video-container iframe {
@@ -858,7 +982,23 @@ h2.tribe-events-page-title{
     font-weight: 300;
     font-size: 36px;
     line-height: 46px;
-    margin-bottom: 30px !important;
+    margin-bottom: 20px !important; 
+    position: relative;
+    text-align: left;
+}
+
+.events_title_fix{
+    width: 30px;
+    height: 40px;
+    background: #fff;
+    position: absolute;
+    left: -10px;
+    top: 0px;
+    display: none;
+}
+
+h2.tribe-events-page-title a{
+    display: none;
 }
 
 
@@ -923,25 +1063,40 @@ h2.tribe-events-page-title{
 
 .tribe-events-read-more{
     @media (min-width: $screen-sm-min) {
-     float: right;
+     /*float: right;
      position: absolute;
      right: 0px;
-     top: 20px;
+     top: 20px;*/
      background: $brand-primary;
      @include border-radius(4px);
      padding: 12px 20px;
      color: #fff;
      height: auto;
-     @include transition(all .2s ease-in-out);
+     @include transition(all .2s ease-in-out);  
      display: inline-block;
+     margin-bottom: 15px;  
     }
 }
 
 .tribe-events-read-more:hover{
     @media (min-width: $screen-sm-min) {
     color: #fff;
-    background: $brand-primary-dark;
+    background: $brand-primary-dark;  
     }
+}  
+
+
+.tribe-events-venue-details{
+    padding-left: 0px !important;
+    }
+
+.tribe-events-loop .tribe-events-event-meta{
+    margin-bottom: 30px;
+}
+
+.tribe-events-event-meta span{
+    font-style: normal !important;
+    font-weight: 300 !important;
 }
 
 .vevent{
@@ -999,6 +1154,26 @@ h3.tribe-events-single-section-title{
     margin-bottom: 5px;
 }
 
+.tribe-events-back{
+    display: none;
+}
+
+.tribe-bar-date-filter{
+    display: none;
+}
+
+
+.tribe-bar-mini .tribe-bar-submit{
+    @media (min-width: $screen-lg-min){
+        margin-left: 190px;
+        margin-top: 5px; 
+    }
+    @media (min-width: $screen-xl-min){
+        margin-left: 330px;
+        margin-top: 5px; 
+    }
+}
+
 .member_discount{
     display: inline-block;
     margin-left: 10px;
@@ -1007,7 +1182,7 @@ h3.tribe-events-single-section-title{
     font-weight: 300;  
     width: auto;
     height: auto;
-    position: relative;
+    position: relative; 
     right: auto;
     top: auto;
     text-align: left;
@@ -1068,7 +1243,7 @@ h3.tribe-events-single-section-title{
     font-size: 15px;
     display: none;
 }
-.tribe-events-list #tribe-events-footer{
+.single-tribe_events .tribe-events-list #tribe-events-footer{
     display: none;
 }
 
@@ -1087,6 +1262,781 @@ h3.tribe-events-single-section-title{
     border-bottom: none;
 }
 
+.other_courses h3{
+   margin-bottom: 10px; 
+}
+
+
+.extradate{
+    font-size: 13px;
+    position: relative;
+    top: 1px;
+}
+
+.single-tribe_events .tribe-events-schedule .tribe-events-cost{  
+   font-size: 13px;
+   position: relative; 
+   top: 1px;
+}
+
+.tribe-events-divider{
+    position: relative;   
+    top: 2px;
+}
+
+
+.single-tribe_events .tribe-events-sub-nav{
+    display: none;
+}
+
+
+/*Hide on archive event pages*/
+.post-type-archive-tribe_events .other_courses{    
+    display: none !important; 
+}
+
+.single-tribe_events h2.tribe-events-single-event-title{ 
+    line-height: 46px;
+}
+
+
+//Ticket Fixes
+.tribe-events-tickets .tickets_name{
+    @media (min-width: $screen-xs-min){
+        display: none;
+    }
+    @media (min-width: $screen-lg-min){
+        display: block;
+        border-bottom: none !important;
+        position: relative;
+        top: -1px;
+        border-bottom: none;
+        padding-top: 30px;
+    }
+    
+}
+
+
+
+
+
+/*Listings*/
+
+.listings{
+    list-style-type: none;
+    padding: 0px;
+    margin-bottom: 30px;
+}
+
+.listings li{
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid $borders;
+}
+
+.listings li:last-child{
+    border-bottom: none;
+}
+
+.listings li h3{
+    margin-bottom: 2px;
+}
+
+.listings li h3 a{
+    color: #333;
+}
+
+.listings li span{
+    margin-bottom: 20px;
+    display: inline-block;
+    color:  $brand-primary;
+}
+
+.single_vacancy h2{
+    margin-bottom: 2px;
+}
+
+.single_vacancy span{
+    margin-bottom: 20px;
+    color:  $brand-primary;
+    display: inline-block;
+}
+
+.single_vacancy{
+    margin-bottom: 40px;
+}
+
+
+/*Staff*/
+.staff_listing{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.staff_listing img{
+    display: block;
+    width: auto;
+    max-width: 100%;
+    margin-bottom: 0px;
+}
+
+.staff_listing li{
+    margin-bottom: 20px;
+        @media (max-width: 400px) {
+              width: 100%;
+        }
+}
+
+.staff_listing .details{
+    border: 1px solid $borders;
+    border-top: 0px;
+    padding: 15px;
+    
+    @media (min-width: $screen-xs-min){
+        height: 110px;
+    }
+    
+    @media (min-width: $screen-sm-min){
+        height: 130px;
+    }
+    
+    @media (min-width: $screen-md-min){   
+        height: 130px;
+    }
+
+}
+
+.staff_listing .details p{
+    margin-bottom: 0px;
+    font-size: 12px;
+    line-height: 20px;
+    @media (min-width: $screen-sm-min){
+       font-size: 14px;
+    }
+}
+
+/*Press releases*/
+
+.pressrelease{
+    @extend .listings;
+}
+
+.pressrelease li{
+    position: relative;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    @media (min-width: $screen-sm-min) { 
+       padding-right: 145px;
+    }
+}
+
+.pressrelease .cta{
+    display: none;
+    float: right;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    @media (min-width: $screen-sm-min) {
+      display: inline-block;
+    }
+}
+
+
+
+/*Current Applications*/
+
+.currentapps{
+    @extend .pressrelease;
+    position: relative;
+}
+
+.currentapps .closebox{
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    background: $brand-primary;
+    @include border-radius(4px);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    @include transition(all .2s ease-in-out);
+    display: inline-block;
+    text-align: center;
+}
+
+.currentapps .closebox:hover{
+    cursor: pointer;
+}
+
+.currentapps span{
+    margin-bottom: 0px !important; 
+}
+
+.currentapps i{  
+    font-size: 18px;
+}
+
+.currentapps li{
+    padding: 30px;
+    border: 1px solid $borders; 
+}
+
+.currentapps li:last-child{
+    border-bottom: 1px solid $borders;
+    margin-bottom: 30px;
+}
+
+.currentapps li p{
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+
+.currentapps li p span{
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0px;
+}
+
+.currentapps li h3{
+    padding-right: 80px;
+}
+
+
+
+/*Branches*/
+.branch_details{
+    @extend .col-sm-12, .col-md-6;
+}
+
+.branch_map{
+    @extend .col-sm-12, .col-md-6;
+}
+
+
+//Responsive Map Branches
+.map-container{
+@extend .video-container;
+  height: 300px;
+  
+  @media (min-width: $screen-xs-min) {
+      height: 400px;
+  }
+  
+  @media (min-width: $screen-sm-min) {
+      height: 500px;
+  }
+  
+  @media (min-width: $screen-md-min) {
+      height: 330px;
+  }
+  
+   @media (min-width: $screen-lg-min) {
+      height: 300px;
+  }
+  
+   @media (min-width: $screen-xl-min) {
+      height: 330px;
+  }
+  
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  }
+
+
+/*Waypoints*/
+.nav_waypoint{
+    width: 100%;
+    display: inline-block;
+    height: 1px;
+    position: absolute;
+    top: 60px;
+    top: 142px;
+    top: 400px;
+    }
+    
+.fixed_waypoint{
+    width: 100%;
+    display: inline-block;
+    height: 1px;
+    position: absolute;
+    top: 142px;
+    }
+    
+.top_waypoint{
+    width: 100%;
+    display: inline-block;
+    height: 1px;
+    position: absolute;
+    top: 110px;
+}
+
+.banner_wrap{
+    /*@include transition(all 0.8s ease-in-out);*/
+    @include transition(all 0.5s ease-in-out);
+}
+
+.banner_margin{
+    margin-top: -80px; 
+}
+
+.fixednav{
+    top: -80px;
+    position: fixed;
+    display: block;
+    left: 0px;
+    width: 100%;
+    z-index: 2000;
+    background: #fff;
+    @include transition(all 0.5s ease-in-out);
+    top: 0px;
+    
+    @media (min-width: $screen-md-min){
+        top: -142px;
+        height: 142px;
+        position: fixed;
+        display: block;
+        left: 0px;
+        width: 100%;
+        z-index: 2000;
+        background: #fff;
+        @include transition(all 0.5s ease-in-out);
+        top: 0px;
+    }
+}
+
+
+.fixednav .container,
+.fixednav .banner
+{
+    background: #fff;
+}
+
+.fixednav .container,
+.fixednav .banner,
+.fixednav a.brand,
+.fixednav .nav_full,
+.fixednav .nav_search,
+.fixednav .nav_login,
+.fixednav .my_select 
+
+{
+     @include transition(all 0.5s ease-in-out);
+}
+
+
+.nav_absolute{
+    top: 0px;
+}
+
+.nav_fixed_hide{
+    top: -80px;
+    @media (min-width: $screen-md-min){
+        top: -142px;
+    }
+}
+
+.narrownav{
+    @include transition(all 0.5s ease-in-out);
+    height: 80px;
+}
+.narrownav .banner
+{
+    @media (min-width: $screen-md-min){
+        height: 80px;
+        @include transition(all 0.5s ease-in-out);
+        border-bottom: 1px solid $borders;
+    }
+}
+
+.narrownav .container
+{
+    @media (min-width: $screen-md-min){
+        height: 78px;
+        @include transition(all 0.5s ease-in-out);
+    }
+}
+
+.narrownav .nav_full,
+.narrownav .nav_login,
+.narrownav a.brand
+{
+    @media (min-width: $screen-md-min){
+        margin-top:15px;
+    }
+}
+
+.narrownav .nav_search{
+    @media (min-width: $screen-md-min){
+        margin-top:0px;
+    } 
+}
+
+.narrownav .my_select{
+    @media (min-width: $screen-md-min){
+        margin-top:15px; 
+    } 
+}
+
+/*Hide original nav but keep height*/
+.nav_default,
+.nav_default .container,
+.nav_default .banner,
+.nav_default a.brand,
+.nav_default .nav_full,
+.nav_default .nav_search,
+.nav_default .nav_login{
+    opacity: 0.0 !important;
+    background: none;
+}
+
+
+
+
+/*Search*/
+.search-results article{
+    border-bottom: 1px solid $borders;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.search-results article:first-child{
+    padding-top: 0px;
+}
+
+.search-results article .entry-title{
+    margin-bottom: 0px;
+    font-size: 30px;
+    font-family: $primary-font;
+}
+
+.search-results article .entry-title a{
+    color: #333;
+}
+
+
+
+
+
+/*Preloader*/
+#preloader {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:#fff;
+    z-index:21000; 
+    }
+    
+#status{
+    width:200px;
+    height:200px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    background-image:url(../images/status.gif); 
+    background-repeat:no-repeat;
+    background-position:center;
+    margin:-100px 0 0 -100px;
+    }
+    
+.loaderbar{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 8px;
+    background: #e8e8e8;
+    background: $brand-primary;
+    display: inline-block;
+    width: 0%;
+    @include transition(all .4s ease-in-out);
+    }
+
+.loaderbar-animate
+{
+-webkit-animation: loaderanimate 2s 1 normal 0 running forwards;
+-moz-animation: loaderanimate 2s 1 normal 0 running forwards; 
+animation: loaderanimate 2s 1 normal 0 running forwards;
+}  
+
+@-webkit-keyframes loaderanimate {
+  0% {width: 0%;}
+  40% {width: 40%;}
+  60% {width: 60%;}
+  80% {width: 80%;}
+  90% {width: 90%;}
+}
+
+@-moz-keyframes loaderanimate {
+  0% {width: 0%;}
+  40% {width: 40%;}
+  60% {width: 60%;}
+  80% {width: 80%;}
+  90% {width: 90%;}
+}
+.loaderbar-complete{
+    width: 100% !important;
+}
+
+
+//Attendees
+#attendee_details{
+    margin-bottom: 30px;   
+    margin-top: 30px;
+    float: right;
+    
+    @media (min-width: $screen-sm-min){
+        width: 100% !important;
+    }
+}
+
+
+
+
+//Contractor Search
+.con_wrap .btn-group{
+    background: #2879a4; 
+    width: 100%;
+}
+
+.con_wrap .btn-group a{ 
+    font-size: 11px;
+    padding: 14px 11px;
+    background: #2879a4;
+    border: 1px solid #2879a4;
+    color: #fff;
+    display: inline-block;
+    border-radius: 0px;
+}
+
+.con_wrap .btn-group a img{
+    display: none;
+    margin: 0 auto 10px auto;
+}
+
+.con_wrap .btn-group a:hover{
+    background: #1f6080;
+    border: 1px solid #1f6080;  
+    color: #fff;
+}
+
+.con_wrap .btn-group a.btn-success{
+    border: 1px solid #1f6080;
+    background: #1f6080;
+}
+
+.con_wrap .form-group{
+    border: 1px solid #d9d9d9;
+    border-top: 0px;
+    padding: 30px;
+}
+
+.con_wrap .form-group input{ 
+    height: 60px;
+    box-shadow: none;
+    padding-left: 50px;
+    margin-bottom: 30px;
+}
+
+.con_wrap #postcode{
+   background: url(../images/i-location.gif) no-repeat 10px;  
+}
+
+.con_wrap #companyname{
+    background: url(../images/i-company.gif) no-repeat 10px;  
+}
+
+.con_wrap select.form-control{
+    height: 60px;
+    box-shadow: none;
+    padding-left: 50px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.con_wrap #sort{
+   background: url(../images/i-grouping.gif) no-repeat 10px; 
+}
+
+.con_wrap #distance{
+   background: url(../images/i-distance.gif) no-repeat 10px;     
+}
+
+.con_wrap #sizecontract{
+    padding-left: 10px !important;
+}
+
+.con_wrap .checkbox{
+    border-bottom: 1px solid $borders;
+    padding-top: 5px; 
+    padding-bottom: 10px;
+}
+
+.con_wrap .checkbox:last-child{
+    border-bottom: none;
+}
+
+.con_wrap label{
+    font-weight: 300;
+}
+
+.con_wrap .btn{
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 300; 
+}
+
+.con_wrap input[type='checkbox']{ 
+    height: 20px;
+}
+
+@media screen and (min-width: 500px) {
+    .con_wrap .form-group{
+        padding: 50px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .con_wrap .btn-group a{
+        padding: 20px 36px;
+        border-left: 1px solid #1f6080;
+        width: 198px;
+        position: relative;
+        font-size: 13px !important;    
+    }
+    
+    .con_wrap .btn-group a:nth-child(2){ 
+        position: relative;
+        left: 1px;
+    }
+    
+    .con_wrap .btn-group a:nth-child(3){
+        position: relative;
+        left: 2px;
+    }
+    
+    .con_wrap .btn-group a:last-child{
+        border-right: 1px solid #1f6080;
+    }
+    
+    .con_wrap .btn-group a:hover{
+        border-right: 1px solid #1f6080;
+    }
+      
+    .con_wrap .btn-group a img{
+        display: block;
+    }
+    
+}
+
+
+@media screen and (min-width: 900px) {  
+    .con_wrap .btn-group a{
+        width: 180px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .con_wrap .form-group{
+        padding: 70px;
+    }
+    
+    .con_wrap .btn-group a{    
+        width: 198px;
+    }
+}
+
+
+/*Contractor Search Results*/
+.con_results_wrap{
+    margin-top: 50px;
+}
+
+.con_search_results{   
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.con_search_results li{
+    border-bottom: 1px solid $borders;
+    padding: 10px 0;
+}
+
+.con_search_results li span{
+    font-weight: 600;
+}
+
+.con_search_service{
+    border: 1px solid $borders;
+    padding: 40px;
+}
+
+.con_search_service ul{
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.con_search_service li{
+    padding-bottom: 0px;
+}
+
+.con_search_service li i{
+    color: $brand-primary;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.con_search_head{
+    position: absolute;  
+    top: 0px;
+    left: 0px;
+    width: 2000px;
+    height: 52px;
+    background: #c3c3c3;
+    top: -70px;
+    
+    @media (min-width: $screen-sm-min){
+        top: -20px;
+        left: -50px;
+    }
+    
+    @media (min-width: 845px){
+        left: -100px;
+    }
+    
+    @media (min-width: $screen-md-min){
+        top: 0px;
+        left: 0px;
+    }
+    
+    
+}
+
+.con_search_head a{
+    height: 52px;
+    line-height: 52px;
+    background: #d9d9d9;
+    color: #333;
+    display: inline-block;
+    padding: 0 60px;
+}
+
+.con_search_head a i{
+    color: #333;
+    font-size: 20px;
+    color: $brand-primary;
+    margin-right: 5px;
+    position: relative;
+    top: 1px;
+}
 
 /*Modifiers*/
 .white{
@@ -1130,7 +2080,7 @@ h3.tribe-events-single-section-title{
     }
 }
 
-.divider{
+.divider{ 
     width: 100%;
     position: relative;
     display: block;
@@ -1138,6 +2088,12 @@ h3.tribe-events-single-section-title{
     height: 1px;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.full_divider{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: block;
 }
 
 .divider_lg{

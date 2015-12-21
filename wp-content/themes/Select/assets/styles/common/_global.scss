@@ -113,3 +113,52 @@ blockquote{
     margin: 0px;
 }
     
+    
+    
+/*IE Fixes*/
+
+
+.no-canvas body{
+font-size: 16px !important;    
+}
+
+.no-canvas .feed_ul li a{
+color: #fff !important;
+}
+
+.select_wrap{
+    background: #fff url('../images/arrow.gif') 200px no-repeat;
+}
+
+.no-canvas #contract_search select{
+    width: 250px;
+
+    @media (min-width: $screen-xs-min){
+        width: 360px;
+    }
+    
+    @media (min-width: 600px){
+        width: 460px;
+    }
+    
+    @media (min-width: $screen-sm-min){
+        width: 170px;
+    }
+    
+    @media (min-width: $screen-md-min){
+        width: 250px
+    } 
+}
+
+
+
+//Event price temp fix till price values are displayed properly
+.tribe-events-schedule .tribe-events-cost,
+.tribe-events-schedule .tribe-events-divider,
+.tribe-events-meta-group .tribe-events-event-cost,
+.tribe-events-meta-group dl dt:nth-of-type(3),
+.type-tribe_events .tribe-events-event-cost,
+.tribe-events-divider
+{
+display: none !important;
+}

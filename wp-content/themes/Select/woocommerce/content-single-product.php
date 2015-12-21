@@ -29,6 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 }
 ?>
 
+
 <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 		/**
@@ -59,8 +60,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<div class="single_desc">
 			<?php do_action( 'woocommerce_after_single_product_summary' ); ?>
-			<span class="packsize"><?php the_field('pack_size'); ?></span>
-			<div class="product_share">Share this product: <?php echo do_shortcode("[ssba]"); ?></div>
+			<?php if(get_field('download')) { ?>
+			<span class="downloads"><a href="<?php the_field('download'); ?>"><?php the_field('name_of_download'); ?></a></span>
+			<?php } ?>
+			<div class="product_share"><?php echo do_shortcode("[ssba]"); ?></div>
 		</div>
 
 	</div><!-- .summary -->
@@ -75,7 +78,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php
 		do_action( 'woocommerce_after_single_product_summary' );
 	?>
-	<div class="product_share">Share this product: <?php echo do_shortcode("[ssba]"); ?></div>
+	<div class="product_share"><?php echo do_shortcode("[ssba]"); ?></div>
 	</div>
 
 

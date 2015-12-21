@@ -62,7 +62,7 @@ define('NONCE_SALT',       'put your unique phrase here');
 $table_prefix  = 'wp_';
 
 /*Development*/
-define('WP_ENV', 'development');
+//define('WP_ENV', 'development');
 
 
 /**

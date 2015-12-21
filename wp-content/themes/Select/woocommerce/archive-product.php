@@ -39,7 +39,9 @@ if ( ! defined( 'ABSPATH' ) ) {
             
          <main class="main" role="main">
 			<div class="content_inner">
-
+			<?php if ( !is_user_logged_in() ) { ?>
+				<p class="info_dialogue"><i class="fa fa-info-circle"></i> Some products are available to Members only – please <a class="nav_login_fixed">log in</a> to My SELECT to view.</p>
+			<?php } ?>
 	<?php
 		/**
 		 * woocommerce_before_main_content hook
@@ -69,12 +71,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 				do_action( 'woocommerce_before_shop_loop' );
 			?>
 
+
 			<?php woocommerce_product_loop_start(); ?>
 
 				<?php woocommerce_product_subcategories(); ?>
+				
+				  <?php if ( !is_user_logged_in() ) {  ?> 
+				   <p>Some products are available to Members only – please log in to My SELECT to view.</p>
+				   <?php } ?> 
 
 				<?php while ( have_posts() ) : the_post(); ?>
-
+				
 					<?php wc_get_template_part( 'content', 'product' ); ?>
 
 				<?php endwhile; // end of the loop. ?>

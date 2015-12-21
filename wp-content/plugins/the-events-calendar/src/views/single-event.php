@@ -34,6 +34,15 @@ $event_id = get_the_ID();
 
 	<div class="tribe-events-schedule updated published tribe-clearfix">
 		<?php echo tribe_events_event_schedule_details( $event_id, '<h3>', '</h3>' ); ?>
+	
+	    <span class="extradate"><?php if(get_field('second_date')) { ?> and concluding on
+		<?php
+		$date = DateTime::createFromFormat('Ymd', get_field('second_date'));
+		echo $date->format('d F');
+		?>
+		<?php } ?>
+	   </span>
+	
 		<?php if ( tribe_get_cost() ) : ?>
 			<span class="tribe-events-divider">|</span>
 			<span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>

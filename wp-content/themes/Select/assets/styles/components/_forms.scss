@@ -233,7 +233,9 @@
 //Content forms
 .content_inner input[type='text'],
 .content_inner select,
-.content_inner input[type='date']
+.content_inner input[type='date'],
+.content_inner textarea,
+.content_inner input[type='email']
 {
     border: 1px solid $borders;
     @include border-radius(2px);
@@ -244,6 +246,10 @@
 }
 
 .content_inner input[type='text']{
+    width: 100%;
+}
+
+.content_inner textarea{
     width: 100%;
 }
 
@@ -295,3 +301,5 @@
     padding-right: 60px;
     display: inline-block;
 }
+
+

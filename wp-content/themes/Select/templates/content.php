@@ -1,4 +1,5 @@
 <article <?php post_class(); ?>>
+ <?php echo get_the_post_thumbnail($pageChild->ID, 'square_news'); ?>
   <header>
     <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
     <?php get_template_part('templates/entry-meta'); ?>

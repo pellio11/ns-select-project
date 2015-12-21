@@ -1,7 +1,12 @@
 <div class="panel-padding-lg-none grey-bg-panel">
 <div class="wrap container" role="document">
   <div class="row">
+  
   <footer class="content-info" role="contentinfo">
+  
+  <?php if ( !is_page_template( 'template-home.php' ) && !is_page_template( 'template-branches.php' ) && !is_page_template( 'template-covers.php' ) && !is_page_template( 'template-custom.php' ) && !is_page_template( 'template-contact.php' ) && !is_product()  &&  !is_page('Cart') &&  !is_page('Checkout') ) { ?>
+    <div class="foot_line_wrap"><div class="foot_line"></div></div>
+  <?php } ?>
 
     <?php // dynamic_sidebar('sidebar-footer'); ?>   
     <div class="footer-widget">
@@ -36,3 +41,8 @@
   </div>
 </div>
 </div>
+
+
+
+
+

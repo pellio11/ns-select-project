@@ -220,6 +220,11 @@ function login_header( $title = 'Log In', $message = '', $wp_error = '' ) {
 		padding: 3px 15px;
 	}
 	
+		.login_custom_logo img, .login_custom_logo{
+		border: none !important; 
+		}
+
+	
 	</style>
 	</head>
 	
@@ -269,7 +274,7 @@ function login_header( $title = 'Log In', $message = '', $wp_error = '' ) {
 			 *
 			 * @param string $errors Login error message.
 			 */
-			echo '<div id="login_error">' . apply_filters( 'login_errors', $errors ) . "</div>\n";
+			
 		}
 		if ( ! empty( $messages ) ) {
 			/**
@@ -834,7 +839,7 @@ case 'register' :
 
 <p id="nav">
 <a href="<?php echo esc_url( wp_login_url() ); ?>"><?php _e( 'Log in' ); ?></a> |
-<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>" title="<?php esc_attr_e( 'Password Lost and Found' ) ?>"><?php _e( 'Lost your password?' ); ?></a>
+<a href="http://select.org.uk/wp-login.php?action=lostpassword" title="<?php esc_attr_e( 'Password Lost and Found' ) ?>"><?php _e( 'Lost your password?' ); ?></a>
 </p>
 
 <?php
@@ -1019,7 +1024,7 @@ default:
 		echo apply_filters( 'register', $registration_url ) . ' | ';
 	endif;
 	?>
-	<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>" title="<?php esc_attr_e( 'Password Lost and Found' ); ?>"><?php _e( 'Lost your password?' ); ?></a>
+	<a href="http://select.org.uk/wp-login.php?action=lostpassword" title="<?php esc_attr_e( 'Password Lost and Found' ); ?>"><?php _e( 'Lost your password?' ); ?></a>
 <?php endif; ?>
 </p>
 <?php } ?>

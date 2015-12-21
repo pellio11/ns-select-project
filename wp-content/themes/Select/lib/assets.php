@@ -54,7 +54,7 @@ function asset_path($filename) {
   static $manifest;
 
   if (empty($manifest)) {
-    $manifest_path = get_template_directory() . DIST_DIR . 'assets.json';
+    $manifest_path = get_template_directory() . DIST_DIR . 'assets.json'; 
     $manifest = new JsonManifest($manifest_path);
   }
 
@@ -68,11 +68,14 @@ function asset_path($filename) {
 function assets() {
   wp_enqueue_style('sage_css', asset_path('styles/main.css'), false, null);
 
-  if (is_single() && comments_open() && get_option('thread_comments')) {
+  if (is_single() && comments_open() && get_option('thread_comments')) { 
     wp_enqueue_script('comment-reply');
   }
-
+  wp_enqueue_script('easing', asset_path('scripts/jquery.easing.1.3.js'), ['jquery'], null, true);
+  wp_enqueue_script('waypoints', asset_path('scripts/jquery.waypoints.js'), ['jquery'], null, true);
+  wp_enqueue_script('respond', asset_path('scripts/respond.min.js'), ['jquery'], null, true);  
   wp_enqueue_script('modernizr', asset_path('scripts/modernizr.js'), [], null, true);
   wp_enqueue_script('sage_js', asset_path('scripts/main.js'), ['jquery'], null, true);
+  
 }
-add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
+add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100); 

@@ -134,7 +134,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 						<?php do_action( 'woocommerce_cart_coupon' ); ?>
 					</div>
 				<?php } ?>
-
+				<div class="shop_links" style="display: inline-block; float: left; width: auto;">
+					<a href="http://www.select.org.uk/shop/"><i class="fa fa-chevron-circle-left"></i> Back to the Shop</a> <a href="http://www.select.org.uk/events/category/courses-and-dates/"><i class="fa fa-chevron-circle-left"></i> Browse Training Courses</a>
+				</div>
 				<input type="submit" class="button" name="update_cart" value="<?php _e( 'Update Cart', 'woocommerce' ); ?>" />
 
 				<?php do_action( 'woocommerce_cart_actions' ); ?>
